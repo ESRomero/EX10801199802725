@@ -23,4 +23,11 @@ router.delete('/galeria/del/:id',(req,res)=>{
     return res.status(200).json({"Picture was deleted successfully":true});
 });//Permite borrar una imagen en especifico segun el id que le mandamos
 
+//http://localhost:3000/api/fotografias/galeria/upd/:id
+router.put('/galeria/upd/:id',(req,res)=>{
+    var id= parseInt(req.params.id);
+    var updPicture = galeriaModel.updatePicture(id,req.body);
+    return res.status(200).json(updPicture);
+}); //upadte name and password of a user
+
 module.exports = router;

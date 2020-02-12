@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "ef0cc23a-7e5b-45c3-a2cf-648f42eb454d",
+		"name": "EX10801199802725",
+		"description": "Testing de los comandos para examen\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/fotografias/galeria/new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "picturetittle",
+							"value": "Imagen de Laptops",
+							"type": "text"
+						},
+						{
+							"key": "pictureurl",
+							"value": "https:\\\\imagen.com\\laptops",
+							"type": "text"
+						},
+						{
+							"key": "picturethumbnailurl",
+							"value": "https:\\\\imagen.com\\laptopstbl",
+							"type": "text"
+						},
+						{
+							"key": "picturealbum",
+							"value": "Tecnologia",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/fotografias/galeria/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fotografias",
+						"galeria",
+						"new"
+					]
+				},
+				"description": "Agrega una nueva entrada de la fotografia"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/fotografias/galeria/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/fotografias/galeria/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fotografias",
+						"galeria",
+						"all"
+					]
+				},
+				"description": "Permite Obtener todos los registros existentes en el filesystem de nuestra galeria"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/fotografias/galeria/del/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/fotografias/galeria/del/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fotografias",
+						"galeria",
+						"del",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				},
+				"description": "Permite Borrar una Fotografia en especifico de la galeria"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/fotografias/galeria/upd/:id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pictureurl",
+							"value": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+							"type": "text"
+						},
+						{
+							"key": "picturethumbnailurl",
+							"value": "https://unsplash.com/photos/T-0EW-SEbsE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/fotografias/galeria/upd/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"fotografias",
+						"galeria",
+						"upd",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				},
+				"description": "Permite Modifcar Ambas URLS de las imagenes en la galeria"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

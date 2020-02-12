@@ -61,4 +61,38 @@ galeriaModel.deletePicture=(id)=>{
     return newGallery.length && true;
 }
 
+galeriaModel.updatePicture=(id,{pictureurl,picturethumbnailurl})=>{
+    var updatingPicture = pictureCollection.filter(
+        (o)=>{
+            return o.pictureID === id;
+        }
+    );
+    if(updatingPicture && updatingPicture.length>0){
+        updatingPicture = updatingPicture[0];
+    }else{
+        return null;
+    }
+    var updPicture = {};
+    var newPictureCollection = pictureCollection.map(
+        (o)=>{
+            if(o.pictureID === id){
+                 updPicture = Object.assign(
+                    {},
+                    o,
+                    {
+                        pictureURL:pictureurl,
+                        pictureThumbnailUrl:picturethumbnailurl
+                    }
+                );
+                return updPicture;
+            }else{
+                return o;
+            }
+        }
+    );
+pictureCollection = newPictureCollection;
+writeToFile();
+return updPicture;
+}
+
 module.exports = galeriaModel;
