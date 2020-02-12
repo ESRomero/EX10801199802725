@@ -49,4 +49,16 @@ galeriaModel.getAll = ()=>{
     return pictureCollection;
 }
 
+galeriaModel.deletePicture=(id)=>{
+    var newGallery = [];
+    newGallery = pictureCollection.filter(
+        (o)=>{
+            return o.pictureID !== id;
+        }
+    );
+    pictureCollection = newGallery;
+    writeToFile();
+    return newGallery.length && true;
+}
+
 module.exports = galeriaModel;

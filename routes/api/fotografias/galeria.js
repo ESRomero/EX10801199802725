@@ -16,4 +16,11 @@ router.get('/galeria/all',(req,res)=>{
 
 }); //Permite ver toda la informacion existente de las fotografia en galeria
 
+//http://localhost:3000/api/fotografias/galeria/del/:id
+router.delete('/galeria/del/:id',(req,res)=>{
+    var id= parseInt(req.params.id);
+    galeriaModel.deletePicture(id,req.body);
+    return res.status(200).json({"Picture was deleted successfully":true});
+});//Permite borrar una imagen en especifico segun el id que le mandamos
+
 module.exports = router;
