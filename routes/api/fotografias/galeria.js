@@ -9,4 +9,11 @@ router.post('/galeria/new',(req,res)=>{
     return res.status(200).json(newPicture);
 }); // Agrega un nuevo registro de una imagen
 
+
+//http://localhost:3000/api/fotografias/galeria/all
+router.get('/galeria/all',(req,res)=>{
+    return res.status(200).json(galeriaModel.getAll());
+
+}); //Permite ver toda la informacion existente de las fotografia en galeria
+
 module.exports = router;

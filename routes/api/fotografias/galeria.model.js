@@ -45,4 +45,8 @@ galeriaModel.addNew=({picturetittle,pictureurl,picturethumbnailurl,picturealbum}
     return newPicture;
 }
 
+galeriaModel.getAll = ()=>{
+    return pictureCollection;
+}
+
 module.exports = galeriaModel;
